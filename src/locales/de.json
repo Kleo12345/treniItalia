@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "Treni Italia",
+    "subtitle": "Echtzeit-Verfolgung",
+    "loading": "Lade...",
+    "error": "Fehler",
+    "noResults": "Keine Ergebnisse."
+  },
+  "search": {
+    "placeholder": "Bahnhof oder Zug suchen...",
+    "recentStations": "Zuletzt",
+    "clearHistory": "Verlauf löschen"
+  },
+  "station": {
+    "departures": "Abfahrten",
+    "arrivals": "Ankünfte",
+    "train": "Zug",
+    "destination": "Ziel",
+    "origin": "Start",
+    "scheduledTime": "Zeit",
+    "delay": "Versp.",
+    "platform": "Gleis",
+    "onTime": "Pünktlich",
+    "delayMinutes": "{min} Min",
+    "cancelled": "Fällt aus",
+    "noTrains": "Keine Züge."
+  },
+  "train": {
+    "journey": "Strecke",
+    "trainNumber": "Zug #{number}",
+    "from": "Von",
+    "to": "Nach",
+    "status": "Status",
+    "departed": "Abgefahren",
+    "arrived": "Angekommen",
+    "scheduled": "Geplant",
+    "actual": "Aktuell",
+    "notDeparted": "Noch nicht",
+    "travelling": "Unterwegs",
+    "stops": "Halte"
+  },
+  "news": {
+    "title": "Live-News",
+    "noNews": "Keine Nachrichten."
+  },
+  "stats": {
+    "trainsRunning": "Züge in Fahrt",
+    "lastUpdated": "Zuletzt akt."
+  },
+  "settings": {
+    "theme": "Design",
+    "dark": "Dunkel",
+    "light": "Hell",
+    "language": "Sprache",
+    "delayThreshold": "Verspätung Warnung",
+    "save": "Speichern"
+  },
+  "weather": {
+    "title": "Wetter"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "Treni Italia",
+    "subtitle": "Tracciamento in tempo reale dei treni",
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore. Riprova.",
+    "noResults": "Nessun risultato."
+  },
+  "search": {
+    "placeholder": "Cerca stazione o treno...",
+    "recentStations": "Ricerche Recenti",
+    "clearHistory": "Cancella Cronologia"
+  },
+  "station": {
+    "departures": "Partenze",
+    "arrivals": "Arrivi",
+    "train": "Treno",
+    "destination": "Destinazione",
+    "origin": "Origine",
+    "scheduledTime": "Orario",
+    "delay": "Rit",
+    "platform": "Binario",
+    "onTime": "In orario",
+    "delayMinutes": "{min} min",
+    "cancelled": "Cancellato",
+    "noTrains": "Nessun treno."
+  },
+  "train": {
+    "journey": "Andamento Treno",
+    "trainNumber": "Treno {number}",
+    "from": "Da",
+    "to": "A",
+    "status": "Stato",
+    "departed": "Partito",
+    "arrived": "Arrivato",
+    "scheduled": "Programmato",
+    "actual": "Effettivo",
+    "notDeparted": "Non partito",
+    "travelling": "In viaggio",
+    "stops": "Fermate"
+  },
+  "news": {
+    "title": "Notizie Live",
+    "noNews": "Nessuna notizia."
+  },
+  "stats": {
+    "trainsRunning": "Treni in circolazione",
+    "lastUpdated": "Ultimo agg."
+  },
+  "settings": {
+    "theme": "Tema",
+    "dark": "Scuro",
+    "light": "Chiaro",
+    "language": "Lingua",
+    "delayThreshold": "Soglia ritardo (min)",
+    "save": "Salva"
+  },
+  "weather": {
+    "title": "Meteo"
+  }
+}

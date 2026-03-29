@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "Treni Italia",
+    "subtitle": "Ndjekje në kohë reale",
+    "loading": "Ngarkim...",
+    "error": "Gabim",
+    "noResults": "S'ka rezultate."
+  },
+  "search": {
+    "placeholder": "Kërko stacion/tren...",
+    "recentStations": "Së fundmi",
+    "clearHistory": "Fshi"
+  },
+  "station": {
+    "departures": "Nisjet",
+    "arrivals": "Mbërritjet",
+    "train": "Tren",
+    "destination": "Destinacion",
+    "origin": "Nisja",
+    "scheduledTime": "Koha",
+    "delay": "Vonesë",
+    "platform": "Plat",
+    "onTime": "Në kohë",
+    "delayMinutes": "{min} min",
+    "cancelled": "Anuluar",
+    "noTrains": "S'ka trena."
+  },
+  "train": {
+    "journey": "Rruga",
+    "trainNumber": "Tren #{number}",
+    "from": "Nga",
+    "to": "Ku",
+    "status": "Status",
+    "departed": "Nisur",
+    "arrived": "Mbërriti",
+    "scheduled": "Planifikuar",
+    "actual": "Real",
+    "notDeparted": "S'është nisur",
+    "travelling": "Udhëtim",
+    "stops": "Ndalime"
+  },
+  "news": {
+    "title": "Lajme",
+    "noNews": "S'ka lajme."
+  },
+  "stats": {
+    "trainsRunning": "Trena në lëvizje",
+    "lastUpdated": "Përditësuar"
+  },
+  "settings": {
+    "theme": "Tema",
+    "dark": "Errët",
+    "light": "Çelët",
+    "language": "Gjuhë",
+    "delayThreshold": "Alarm vonese",
+    "save": "Ruaj"
+  },
+  "weather": {
+    "title": "Moti"
+  }
+}

@@ -1,0 +1,160 @@
+.board {
+  margin-top: 2rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  background: var(--surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.2s ease;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+  background: var(--surface-hover);
+}
+
+.tabActive {
+  color: var(--accent-primary);
+  background: var(--surface-hover);
+}
+
+.tabActive::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: var(--accent-primary);
+  border-radius: 2px 2px 0 0;
+}
+
+.stationName {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tableRow {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.tableRow:hover {
+  background: var(--surface-hover);
+}
+
+.tableCell {
+  padding: 0.7rem 0.75rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.trainNum {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.trainCategory {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  background: var(--accent-primary);
+  color: white;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.time {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.onTime {
+  color: var(--status-on-time);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.delayed {
+  color: var(--status-delayed);
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.delayAlert {
+  color: var(--status-cancelled);
+  font-weight: 700;
+  font-size: 0.8rem;
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.platform {
+  font-weight: 600;
+  text-align: center;
+  min-width: 2rem;
+}
+
+.skeletonRow {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.skeletonCell {
+  height: 16px;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .tableCell {
+    padding: 0.5rem 0.4rem;
+    font-size: 0.8rem;
+  }
+  .hideOnMobile {
+    display: none;
+  }
+}

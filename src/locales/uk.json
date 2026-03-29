@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "Treni Italia",
+    "subtitle": "Онлайн відстеження",
+    "loading": "Завантаження...",
+    "error": "Помилка",
+    "noResults": "Немає результатів"
+  },
+  "search": {
+    "placeholder": "Шукати...",
+    "recentStations": "Нещодавні",
+    "clearHistory": "Очистити"
+  },
+  "station": {
+    "departures": "Відправлення",
+    "arrivals": "Прибуття",
+    "train": "Поїзд",
+    "destination": "Призначення",
+    "origin": "Старт",
+    "scheduledTime": "Час",
+    "delay": "Затримка",
+    "platform": "Колія",
+    "onTime": "Вчасно",
+    "delayMinutes": "{min} хв",
+    "cancelled": "Відмінено",
+    "noTrains": "Немає поїздів"
+  },
+  "train": {
+    "journey": "Маршрут",
+    "trainNumber": "Поїзд #{number}",
+    "from": "З",
+    "to": "До",
+    "status": "Стан",
+    "departed": "Відправився",
+    "arrived": "Прибув",
+    "scheduled": "План",
+    "actual": "Факт",
+    "notDeparted": "Не відправився",
+    "travelling": "В дорозі",
+    "stops": "Зупинки"
+  },
+  "news": {
+    "title": "Новини",
+    "noNews": "Немає новин"
+  },
+  "stats": {
+    "trainsRunning": "Поїздів у дорозі",
+    "lastUpdated": "Оновлено"
+  },
+  "settings": {
+    "theme": "Тема",
+    "dark": "Темна",
+    "light": "Світла",
+    "language": "Мова",
+    "delayThreshold": "Затримка",
+    "save": "Ок"
+  },
+  "weather": {
+    "title": "Погода"
+  }
+}

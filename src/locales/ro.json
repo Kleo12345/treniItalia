@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "Treni Italia",
+    "subtitle": "Urmărire în timp real",
+    "loading": "Se încarcă...",
+    "error": "Eroare",
+    "noResults": "Niciun rezultat."
+  },
+  "search": {
+    "placeholder": "Caută stație sau tren...",
+    "recentStations": "Recente",
+    "clearHistory": "Șterge"
+  },
+  "station": {
+    "departures": "Plecări",
+    "arrivals": "Sosiri",
+    "train": "Tren",
+    "destination": "Destinație",
+    "origin": "Origine",
+    "scheduledTime": "Oră",
+    "delay": "Întârziere",
+    "platform": "Perron",
+    "onTime": "La timp",
+    "delayMinutes": "{min} min",
+    "cancelled": "Anulat",
+    "noTrains": "Niciun tren."
+  },
+  "train": {
+    "journey": "Rută tren",
+    "trainNumber": "Tren #{number}",
+    "from": "De la",
+    "to": "La",
+    "status": "Status",
+    "departed": "Plecat",
+    "arrived": "Sosit",
+    "scheduled": "Programat",
+    "actual": "Real",
+    "notDeparted": "Neplecat",
+    "travelling": "În mișcare",
+    "stops": "Opriri"
+  },
+  "news": {
+    "title": "Știri Live",
+    "noNews": "Fără știri."
+  },
+  "stats": {
+    "trainsRunning": "Trenuri circulă",
+    "lastUpdated": "Actualizat"
+  },
+  "settings": {
+    "theme": "Temă",
+    "dark": "Întunecat",
+    "light": "Luminos",
+    "language": "Limbă",
+    "delayThreshold": "Alertă (min)",
+    "save": "Salvează"
+  },
+  "weather": {
+    "title": "Vreme"
+  }
+}

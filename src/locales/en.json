@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "Treni Italia",
+    "subtitle": "Real-time Italian train tracking",
+    "loading": "Loading...",
+    "error": "Something went wrong. Please try again.",
+    "noResults": "No results found."
+  },
+  "search": {
+    "placeholder": "Search station or train number...",
+    "recentStations": "Recent Stations",
+    "clearHistory": "Clear History"
+  },
+  "station": {
+    "departures": "Departures",
+    "arrivals": "Arrivals",
+    "train": "Train",
+    "destination": "Destination",
+    "origin": "Origin",
+    "scheduledTime": "Scheduled",
+    "delay": "Delay",
+    "platform": "Platform",
+    "onTime": "On time",
+    "delayMinutes": "{min} min late",
+    "cancelled": "Cancelled",
+    "noTrains": "No trains scheduled at this time."
+  },
+  "train": {
+    "journey": "Train Journey",
+    "trainNumber": "Train #{number}",
+    "from": "From",
+    "to": "To",
+    "status": "Status",
+    "departed": "Departed",
+    "arrived": "Arrived",
+    "scheduled": "Scheduled",
+    "actual": "Actual",
+    "notDeparted": "Not departed yet",
+    "travelling": "Travelling",
+    "stops": "Stops"
+  },
+  "news": {
+    "title": "Live News",
+    "noNews": "No news at the moment."
+  },
+  "stats": {
+    "trainsRunning": "Trains running now",
+    "lastUpdated": "Last updated"
+  },
+  "settings": {
+    "theme": "Theme",
+    "dark": "Dark",
+    "light": "Light",
+    "language": "Language",
+    "delayThreshold": "Delay alert threshold (min)",
+    "save": "Save"
+  },
+  "weather": {
+    "title": "Weather"
+  }
+}

@@ -1,0 +1,191 @@
+.container {
+  margin-top: 2rem;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  margin-bottom: 1.5rem;
+}
+
+.backBtn:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.trainTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  background: var(--accent-primary);
+  color: white;
+}
+
+.routeLabel {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.stop {
+  position: relative;
+  padding: 0.6rem 0 0.6rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  transition: opacity 0.2s ease;
+}
+
+.stopPast {
+  opacity: 0.5;
+}
+
+.stopCurrent {
+  opacity: 1;
+}
+
+.stopFuture {
+  opacity: 0.85;
+}
+
+.dot {
+  position: absolute;
+  left: -2rem;
+  top: 0.85rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text-secondary);
+  z-index: 2;
+  border: 2px solid var(--bg-main);
+}
+
+.dotPast {
+  background: var(--status-on-time);
+}
+
+.dotCurrent {
+  background: var(--accent-primary);
+  box-shadow: 0 0 0 4px rgba(41, 121, 255, 0.3);
+}
+
+.dotCurrentPing {
+  position: absolute;
+  left: -2rem;
+  top: 0.85rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  z-index: 1;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  75%, 100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.dotFuture {
+  background: var(--border-color);
+  border-color: var(--surface);
+}
+
+.stopInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.stopName {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.15rem;
+}
+
+.stopTimes {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-geist-mono), monospace;
+  flex-wrap: wrap;
+}
+
+.stopDelay {
+  font-weight: 600;
+}
+
+.delayPositive {
+  color: var(--status-delayed);
+}
+
+.delayNegative {
+  color: var(--status-on-time);
+}
+
+.delayZero {
+  color: var(--status-on-time);
+}
+
+.skeletonTimeline {
+  padding: 1rem;
+}
+
+.skeletonStop {
+  display: flex;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  margin-left: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .timeline {
+    padding-left: 1.5rem;
+  }
+  .stop {
+    padding-left: 1rem;
+  }
+  .dot, .dotCurrentPing {
+    left: -1.5rem;
+  }
+}

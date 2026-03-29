@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "Treni Italia",
+    "subtitle": "实时列车追踪",
+    "loading": "加载中...",
+    "error": "错误",
+    "noResults": "无结果。"
+  },
+  "search": {
+    "placeholder": "搜索车站/车次...",
+    "recentStations": "最近",
+    "clearHistory": "清除"
+  },
+  "station": {
+    "departures": "出发",
+    "arrivals": "到达",
+    "train": "列车",
+    "destination": "目的地",
+    "origin": "始发地",
+    "scheduledTime": "时间",
+    "delay": "延误",
+    "platform": "站台",
+    "onTime": "准点",
+    "delayMinutes": "{min} 分",
+    "cancelled": "取消",
+    "noTrains": "暂无"
+  },
+  "train": {
+    "journey": "行程",
+    "trainNumber": "列车 #{number}",
+    "from": "从",
+    "to": "到",
+    "status": "状态",
+    "departed": "已发车",
+    "arrived": "已到达",
+    "scheduled": "计划",
+    "actual": "实际",
+    "notDeparted": "未发车",
+    "travelling": "行进中",
+    "stops": "停靠"
+  },
+  "news": {
+    "title": "新闻",
+    "noNews": "暂无资料"
+  },
+  "stats": {
+    "trainsRunning": "运行中",
+    "lastUpdated": "更新"
+  },
+  "settings": {
+    "theme": "主题",
+    "dark": "深",
+    "light": "浅",
+    "language": "语言",
+    "delayThreshold": "提醒(分钟)",
+    "save": "保存"
+  },
+  "weather": {
+    "title": "天气"
+  }
+}

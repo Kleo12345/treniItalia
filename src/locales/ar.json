@@ -1,0 +1,61 @@
+{
+  "app": {
+    "title": "Treni Italia",
+    "subtitle": "تتبع القطارات",
+    "loading": "تحميل...",
+    "error": "خطأ",
+    "noResults": "لا نتائج"
+  },
+  "search": {
+    "placeholder": "بحث...",
+    "recentStations": "السابقة",
+    "clearHistory": "مسح"
+  },
+  "station": {
+    "departures": "مغادرة",
+    "arrivals": "وصول",
+    "train": "قطار",
+    "destination": "الوجهة",
+    "origin": "الأصل",
+    "scheduledTime": "الوقت",
+    "delay": "تأخير",
+    "platform": "رصيف",
+    "onTime": "في الوقت",
+    "delayMinutes": "{min} د.",
+    "cancelled": "إلغاء",
+    "noTrains": "لا توجد قطارات"
+  },
+  "train": {
+    "journey": "مسار",
+    "trainNumber": "قطار #{number}",
+    "from": "من",
+    "to": "إلى",
+    "status": "الحالة",
+    "departed": "غادر",
+    "arrived": "وصل",
+    "scheduled": "مجدول",
+    "actual": "فعلي",
+    "notDeparted": "لم يغادر",
+    "travelling": "في الطريق",
+    "stops": "توقفات"
+  },
+  "news": {
+    "title": "أخبار",
+    "noNews": "لا أخبار"
+  },
+  "stats": {
+    "trainsRunning": "القطارات",
+    "lastUpdated": "تحديث"
+  },
+  "settings": {
+    "theme": "السمة",
+    "dark": "داكن",
+    "light": "فاتح",
+    "language": "اللغة",
+    "delayThreshold": "تنبيه",
+    "save": "حفظ"
+  },
+  "weather": {
+    "title": "الطقس"
+  }
+}
