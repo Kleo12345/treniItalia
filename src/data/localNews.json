@@ -1,0 +1,14 @@
+[
+  {
+    "titolo": "Benvenuti nel portale Trenitalia School",
+    "testo": "Questo portale è dedicato al monitoraggio in tempo reale dei treni per il progetto scolastico.",
+    "tipo": "info",
+    "data": 1711790400000
+  },
+  {
+    "titolo": "Manutenzione Programmata",
+    "testo": "Domenica prossima il servizio potrebbe subire brevi interruzioni per aggiornamenti tecnici.",
+    "tipo": "warning",
+    "data": 1711876800000
+  }
+]

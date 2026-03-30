@@ -10,6 +10,7 @@ interface NewsItem {
   title?: string;
   text?: string;
   data?: number;
+  tipo?: 'info' | 'warning';
 }
 
 export default function NewsBanner() {
@@ -38,12 +39,31 @@ export default function NewsBanner() {
   return (
     <div className={`glass-panel ${styles.banner}`}>
       <div className={styles.title}>
+        <span className="dot" style={{ backgroundColor: 'var(--accent-primary)' }}></span>
         {t('news.title')}
       </div>
       <div className={styles.newsList}>
         {news.map((item, i) => (
-          <div key={i} className={styles.newsItem}>
-            {item.titolo || item.title || item.testo || item.text || '—'}
+          <div 
+            key={i} 
+            className={`${styles.newsItem} ${
+              item.tipo === 'warning' ? styles.newsItemWarning : 
+              item.tipo === 'info' ? styles.newsItemInfo : ''
+            }`}
+          >
+            {item.data && (
+              <div className={styles.newsDate}>
+                {new Date(item.data).toLocaleDateString('it-IT', {
+                  day: '2-digit',
+                  month: '2-digit',
+                  hour: '2-digit',
+                  minute: '2-digit'
+                })}
+              </div>
+            )}
+            <div className={styles.newsText}>
+              {item.titolo || item.title || item.testo || item.text || '—'}
+            </div>
           </div>
         ))}
       </div>

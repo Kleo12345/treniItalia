@@ -15,12 +15,18 @@
 .hero {
   text-align: center;
   margin-bottom: 2rem;
+  user-select: none;
+}
+
+.hero h1 {
+  cursor: default;
 }
 
 .heroSubtitle {
   color: var(--text-secondary);
   margin-top: 0.5rem;
   font-size: clamp(0.85rem, 2vw, 1rem);
+  cursor: default;
 }
 
 .searchWrapper {

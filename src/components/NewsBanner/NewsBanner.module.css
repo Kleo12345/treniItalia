@@ -28,10 +28,27 @@
 .newsItem {
   font-size: 0.85rem;
   line-height: 1.5;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
   border-radius: 8px;
-  background: var(--surface);
-  border-left: 3px solid var(--accent-primary);
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid var(--accent-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.newsItemInfo {
+  border-left-color: #3b82f6; /* Blue */
+}
+
+.newsItemWarning {
+  border-left-color: #ef4444; /* Red/Orange */
+}
+
+.newsDate {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  opacity: 0.8;
 }
 
 .newsEmpty {
