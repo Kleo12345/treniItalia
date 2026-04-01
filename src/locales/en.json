@@ -75,5 +75,18 @@
     "address": "123 Train Station Ave, Rome, Italy",
     "phone": "+39 06 1234567",
     "emailAddress": "support@treniitalia.app"
+  },
+  "telegram": {
+    "title": "Telegram Notifications",
+    "description": "Get notified on Telegram when a followed train reaches a new station.",
+    "enable": "Enable Telegram Notifications",
+    "botToken": "Bot Token",
+    "botTokenHint": "From @BotFather on Telegram",
+    "chatId": "Chat ID",
+    "chatIdHint": "Your user ID or group ID",
+    "test": "Send Test Message",
+    "testMessage": "Test notification. Your Telegram integration is working!",
+    "testSuccess": "Test message sent successfully!",
+    "fillBoth": "Please fill in both fields first."
   }
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 export interface FollowedTrain {
   numeroTreno: string;
@@ -10,77 +10,111 @@ export interface FollowedTrain {
   lastStationName?: string;
 }
 
+export interface TelegramSettings {
+  enabled: boolean;
+  token: string;
+  chatId: string;
+}
+
 interface FollowedTrainsContextType {
   followedTrains: FollowedTrain[];
   followTrain: (train: Omit<FollowedTrain, 'lastStationName'>) => void;
   unfollowTrain: (numeroTreno: string) => void;
   isFollowed: (numeroTreno: string) => boolean;
+  telegramSettings: TelegramSettings;
+  saveTelegramSettings: (s: TelegramSettings) => void;
+  sendTelegramMessage: (message: string) => Promise<{ ok: boolean; error?: string }>;
 }
+
+const defaultTelegram: TelegramSettings = { enabled: false, token: '', chatId: '' };
 
 const FollowedTrainsContext = createContext<FollowedTrainsContextType>({
   followedTrains: [],
   followTrain: () => {},
   unfollowTrain: () => {},
   isFollowed: () => false,
+  telegramSettings: defaultTelegram,
+  saveTelegramSettings: () => {},
+  sendTelegramMessage: async () => ({ ok: false }),
 });
 
 export const FollowedTrainsProvider = ({ children }: { children: React.ReactNode }) => {
   const [followedTrains, setFollowedTrains] = useState<FollowedTrain[]>([]);
+  const [telegramSettings, setTelegramSettings] = useState<TelegramSettings>(defaultTelegram);
   const [isClient, setIsClient] = useState(false);
 
+  // Load from localStorage once on client
   useEffect(() => {
     setIsClient(true);
-    const stored = localStorage.getItem('followedTrains');
-    if (stored) {
-      try {
-        setFollowedTrains(JSON.parse(stored));
-      } catch (e) {
-        console.error('Failed to parse followedTrains from localStorage', e);
-      }
+    try {
+      const storedTrains = localStorage.getItem('followedTrains');
+      if (storedTrains) setFollowedTrains(JSON.parse(storedTrains));
+
+      const storedTelegram = localStorage.getItem('telegramSettings');
+      if (storedTelegram) setTelegramSettings(JSON.parse(storedTelegram));
+    } catch (e) {
+      console.error('Failed to load from localStorage', e);
     }
   }, []);
 
-  const saveToStorage = (trains: FollowedTrain[]) => {
+  const saveTrainsToStorage = (trains: FollowedTrain[]) => {
     localStorage.setItem('followedTrains', JSON.stringify(trains));
   };
 
+  const saveTelegramSettings = (s: TelegramSettings) => {
+    setTelegramSettings(s);
+    localStorage.setItem('telegramSettings', JSON.stringify(s));
+  };
+
+  // Proxy through our own server-side route for security
+  const sendTelegramMessage = useCallback(async (message: string): Promise<{ ok: boolean; error?: string }> => {
+    const { token, chatId } = telegramSettings;
+    if (!token || !chatId) return { ok: false, error: 'No credentials configured.' };
+    try {
+      const res = await fetch('/api/notify/telegram', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token, chatId, message }),
+      });
+      const data = await res.json();
+      if (!res.ok) return { ok: false, error: data.error ?? 'Unknown error' };
+      return { ok: true };
+    } catch {
+      return { ok: false, error: 'Network error.' };
+    }
+  }, [telegramSettings]);
+
   const followTrain = (train: Omit<FollowedTrain, 'lastStationName'>) => {
     setFollowedTrains((prev) => {
-      const exists = prev.find((t) => t.numeroTreno === train.numeroTreno);
-      if (exists) return prev;
+      if (prev.find((t) => t.numeroTreno === train.numeroTreno)) return prev;
       const newList = [...prev, train];
-      saveToStorage(newList);
+      saveTrainsToStorage(newList);
       return newList;
     });
 
     if ('Notification' in window && Notification.permission !== 'granted' && Notification.permission !== 'denied') {
       Notification.requestPermission();
     } else if ('Notification' in window && Notification.permission === 'granted') {
-      new Notification('Train Followed', {
-        body: `You are now following train ${train.numeroTreno}.`
-      });
+      new Notification('Train Followed', { body: `You are now following train ${train.numeroTreno}.` });
     }
   };
 
   const unfollowTrain = (numeroTreno: string) => {
     setFollowedTrains((prev) => {
       const newList = prev.filter((t) => t.numeroTreno !== numeroTreno);
-      saveToStorage(newList);
+      saveTrainsToStorage(newList);
       return newList;
     });
   };
 
-  const isFollowed = (numeroTreno: string) => {
-    return followedTrains.some((t) => t.numeroTreno === numeroTreno);
-  };
+  const isFollowed = (numeroTreno: string) =>
+    followedTrains.some((t) => t.numeroTreno === numeroTreno);
 
+  // Background polling
   useEffect(() => {
     if (!isClient || followedTrains.length === 0) return;
 
-    const pollInterval = 30_000; // 30 seconds
-
     const checkTrains = async () => {
-      // Create a map to collect updates to avoid multiple state calls
       let updates = false;
       const updatedTrains = [...followedTrains];
 
@@ -101,19 +135,26 @@ export const FollowedTrainsProvider = ({ children }: { children: React.ReactNode
             }
           }
 
-          if (currentStop) {
-             const stationName = currentStop.stazione;
-             if (train.lastStationName !== stationName) {
-               // The train reached a new station!
-               if ('Notification' in window && Notification.permission === 'granted') {
-                 new Notification(`Treno ${train.numeroTreno}`, {
-                   body: `Il treno è a ${stationName}`
-                 });
-               }
-               // Update tracked last station
-               updatedTrains[i] = { ...train, lastStationName: stationName };
-               updates = true;
-             }
+          if (currentStop && train.lastStationName !== currentStop.stazione) {
+            const stationName: string = currentStop.stazione;
+            const notifyMsg = `🚆 Treno ${train.numeroTreno}\nArrivato a: <b>${stationName}</b>`;
+
+            // Browser notification
+            if ('Notification' in window && Notification.permission === 'granted') {
+              new Notification(`Treno ${train.numeroTreno}`, { body: `Il treno è a ${stationName}` });
+            }
+
+            // Telegram notification (if enabled)
+            if (telegramSettings.enabled && telegramSettings.token && telegramSettings.chatId) {
+              fetch('/api/notify/telegram', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ token: telegramSettings.token, chatId: telegramSettings.chatId, message: notifyMsg }),
+              }).catch(() => { /* silent */ });
+            }
+
+            updatedTrains[i] = { ...train, lastStationName: stationName };
+            updates = true;
           }
         } catch (err) {
           console.error(`Error polling train ${train.numeroTreno}:`, err);
@@ -122,17 +163,19 @@ export const FollowedTrainsProvider = ({ children }: { children: React.ReactNode
 
       if (updates) {
         setFollowedTrains(updatedTrains);
-        saveToStorage(updatedTrains);
+        saveTrainsToStorage(updatedTrains);
       }
     };
 
-    const intervalId = setInterval(checkTrains, pollInterval);
-
+    const intervalId = setInterval(checkTrains, 30_000);
     return () => clearInterval(intervalId);
-  }, [isClient, followedTrains]); // Rebind effect if followedTrains changes (so we don't use stale array)
+  }, [isClient, followedTrains, telegramSettings]);
 
   return (
-    <FollowedTrainsContext.Provider value={{ followedTrains, followTrain, unfollowTrain, isFollowed }}>
+    <FollowedTrainsContext.Provider value={{
+      followedTrains, followTrain, unfollowTrain, isFollowed,
+      telegramSettings, saveTelegramSettings, sendTelegramMessage,
+    }}>
       {children}
     </FollowedTrainsContext.Provider>
   );

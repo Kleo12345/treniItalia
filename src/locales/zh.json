@@ -61,5 +61,18 @@
   },
   "weather": {
     "title": "天气"
+  },
+  "telegram": {
+    "title": "Telegram 通知",
+    "description": "当关注的列车到达新站时，在 Telegram 上接收通知。",
+    "enable": "启用 Telegram 通知",
+    "botToken": "Bot Token",
+    "botTokenHint": "来自 Telegram 的 @BotFather",
+    "chatId": "聊天 ID",
+    "chatIdHint": "您的用户 ID 或群组 ID",
+    "test": "发送测试消息",
+    "testMessage": "测试通知。您的 Telegram 集成正常运行！",
+    "testSuccess": "测试消息发送成功！",
+    "fillBoth": "请先填写两个字段。"
   }
 }

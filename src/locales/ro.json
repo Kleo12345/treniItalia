@@ -61,5 +61,18 @@
   },
   "weather": {
     "title": "Vreme"
+  },
+  "telegram": {
+    "title": "Notificări Telegram",
+    "description": "Primește notificări pe Telegram când un tren urmărit ajunge la o stație nouă.",
+    "enable": "Activează notificările Telegram",
+    "botToken": "Token bot",
+    "botTokenHint": "De la @BotFather pe Telegram",
+    "chatId": "Chat ID",
+    "chatIdHint": "ID-ul tău de utilizator sau ID de grup",
+    "test": "Trimite mesaj test",
+    "testMessage": "Notificare test. Integrarea ta Telegram funcționează!",
+    "testSuccess": "Mesajul test a fost trimis cu succes!",
+    "fillBoth": "Completați ambele câmpuri mai întâi."
   }
 }

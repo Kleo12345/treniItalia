@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useTheme } from '@/context/ThemeContext';
 import { useLocale } from '@/context/LocaleContext';
 import styles from './Header.module.css';
@@ -33,13 +34,13 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <a href="/" className={styles.brand} style={{ textDecoration: 'none', color: 'inherit' }}>
+      <Link href="/" className={styles.brand} style={{ textDecoration: 'none', color: 'inherit' }}>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4 11h16M12 3v8M8 19l-2 3M16 19l2 3M2 14h20M4 3h16rectx2y2"/>
           <rect x="4" y="3" width="16" height="16" rx="2" ry="2" />
         </svg>
         <span className={styles.logo}>{t('app.title')}</span>
-      </a>
+      </Link>
 
       <div className={styles.controls}>
         {trainCount !== null && (

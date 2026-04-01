@@ -9,6 +9,7 @@ import SearchBox from '@/components/SearchBox/SearchBox';
 import StationBoard from '@/components/StationBoard/StationBoard';
 import TrainTimeline from '@/components/TrainTimeline/TrainTimeline';
 import NewsBanner from '@/components/NewsBanner/NewsBanner';
+import TelegramSettings from '@/components/TelegramSettings/TelegramSettings';
 import styles from './page.module.css';
 
 interface Station {
@@ -26,6 +27,7 @@ export default function Home() {
   const [selectedStation, setSelectedStation] = useState<Station | null>(null);
   const [selectedTrain, setSelectedTrain] = useState<string>('');
   const [delayThreshold, setDelayThreshold] = useState(15);
+  const [showTelegram, setShowTelegram] = useState(false);
 
   // Load delay threshold from localStorage
   useEffect(() => {
@@ -83,14 +85,30 @@ export default function Home() {
                 <label className={styles.settingsLabel}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
                   {t('settings.delayThreshold')}
-                  <input
-                    type="number"
-                    className={styles.thresholdInput}
-                    value={delayThreshold}
-                    onChange={e => handleThresholdChange(e.target.value)}
-                    min={1}
-                    max={120}
-                  />
+                  <div className={styles.stepperContainer}>
+                    <button 
+                      className={styles.stepperBtn}
+                      onClick={() => handleThresholdChange(String(delayThreshold - 1))}
+                      type="button"
+                    >
+                      −
+                    </button>
+                    <input
+                      type="number"
+                      className={styles.thresholdInput}
+                      value={delayThreshold}
+                      onChange={e => handleThresholdChange(e.target.value)}
+                      min={1}
+                      max={120}
+                    />
+                    <button 
+                      className={styles.stepperBtn}
+                      onClick={() => handleThresholdChange(String(delayThreshold + 1))}
+                      type="button"
+                    >
+                      +
+                    </button>
+                  </div>
                 </label>
                 <label className={styles.settingsLabel} style={{ marginLeft: '1rem' }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
@@ -113,8 +131,18 @@ export default function Home() {
                     <option value="de">Deutsch</option>
                   </select>
                 </label>
+                <button
+                  className={styles.settingsLabel}
+                  style={{ cursor: 'pointer', marginLeft: '1rem', gap: '0.4rem', background: 'var(--surface-hover)', padding: '0.3rem 0.65rem', borderRadius: '8px', border: '1px solid var(--border-color)', transition: 'all 0.2s' }}
+                  onClick={() => setShowTelegram(true)}
+                  title={t('telegram.title', { defaultValue: 'Telegram Notifications' })}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  Telegram
+                </button>
               </div>
             </div>
+            {showTelegram && <TelegramSettings onClose={() => setShowTelegram(false)} />}
             
             {followedTrains.length > 0 && (
               <div className={styles.followedSection}>

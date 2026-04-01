@@ -61,5 +61,18 @@
   },
   "weather": {
     "title": "Clima"
+  },
+  "telegram": {
+    "title": "Notificaciones de Telegram",
+    "description": "Recibe notificaciones en Telegram cuando un tren seguido llega a una nueva estación.",
+    "enable": "Habilitar notificaciones de Telegram",
+    "botToken": "Token del bot",
+    "botTokenHint": "De @BotFather en Telegram",
+    "chatId": "ID de chat",
+    "chatIdHint": "Tu ID de usuario o ID de grupo",
+    "test": "Enviar mensaje de prueba",
+    "testMessage": "¡Notificación de prueba. Tu integración de Telegram funciona!",
+    "testSuccess": "¡Mensaje de prueba enviado con éxito!",
+    "fillBoth": "Por favor, completa ambos campos primero."
   }
 }

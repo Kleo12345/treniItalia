@@ -61,5 +61,18 @@
   },
   "weather": {
     "title": "Moti"
+  },
+  "telegram": {
+    "title": "Njoftimet Telegram",
+    "description": "Merr njoftime në Telegram kur një tren i ndjekur arrin në një stacion të ri.",
+    "enable": "Aktivizo njoftimet Telegram",
+    "botToken": "Tokeni i botit",
+    "botTokenHint": "Nga @BotFather në Telegram",
+    "chatId": "ID-ja e bisedës",
+    "chatIdHint": "ID-ja e përdoruesit ose grupit",
+    "test": "Dërgo mesazh provë",
+    "testMessage": "Njoftim provë. Integrimi yt i Telegram funksionon!",
+    "testSuccess": "Mesazhi i provës u dërgua me sukses!",
+    "fillBoth": "Ju lutemi plotësoni të dy fushat fillimisht."
   }
 }

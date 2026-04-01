@@ -61,5 +61,18 @@
   },
   "weather": {
     "title": "Погода"
+  },
+  "telegram": {
+    "title": "Повідомлення Telegram",
+    "description": "Отримуйте повідомлення в Telegram, коли відстежуваний поїзд прибуває на нову станцію.",
+    "enable": "Увімкнути повідомлення Telegram",
+    "botToken": "Токен бота",
+    "botTokenHint": "Від @BotFather у Telegram",
+    "chatId": "Chat ID",
+    "chatIdHint": "Ваш ID користувача або ID групи",
+    "test": "Надіслати тестове повідомлення",
+    "testMessage": "Тестове повідомлення. Ваша інтеграція Telegram працює!",
+    "testSuccess": "Тестове повідомлення успішно надіслано!",
+    "fillBoth": "Спочатку заповніть обидва поля."
   }
 }

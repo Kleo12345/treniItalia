@@ -53,15 +53,59 @@
 }
 
 .thresholdInput {
-  width: 50px;
-  padding: 0.25rem 0.4rem;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  background: var(--surface);
+  width: 40px;
+  padding: 0.25rem 0.2rem;
+  border: none;
+  background: transparent;
   color: var(--text-primary);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   text-align: center;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.thresholdInput::-webkit-outer-spin-button,
+.thresholdInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.stepperContainer {
+  display: flex;
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.stepperContainer:focus-within {
+  border-color: var(--accent-primary);
+}
+
+.stepperBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.stepperBtn:hover {
+  background: var(--accent-primary);
+  color: white;
+}
+
+.stepperBtn:active {
+  transform: scale(0.9);
 }
 
 .thresholdInput:focus {

@@ -75,5 +75,18 @@
     "address": "Viale delle Stazioni 123, Roma, Italia",
     "phone": "+39 06 1234567",
     "emailAddress": "support@treniitalia.app"
+  },
+  "telegram": {
+    "title": "Notifiche Telegram",
+    "description": "Ricevi notifiche su Telegram quando un treno seguito arriva a una nuova stazione.",
+    "enable": "Abilita notifiche Telegram",
+    "botToken": "Token del bot",
+    "botTokenHint": "Da @BotFather su Telegram",
+    "chatId": "Chat ID",
+    "chatIdHint": "Il tuo ID utente o ID gruppo",
+    "test": "Invia messaggio di prova",
+    "testMessage": "Notifica di prova. La tua integrazione Telegram funziona!",
+    "testSuccess": "Messaggio di prova inviato con successo!",
+    "fillBoth": "Compila entrambi i campi prima."
   }
 }
