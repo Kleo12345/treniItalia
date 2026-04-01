@@ -57,5 +57,19 @@
   },
   "weather": {
     "title": "Weather"
+  },
+  "support": {
+    "title": "Customer Support",
+    "subtitle": "How can we help you today?",
+    "name": "Your Name",
+    "email": "Email Address",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send Message",
+    "successMessage": "Message sent successfully! We'll get back to you soon.",
+    "contactInfo": "Contact Information",
+    "address": "123 Train Station Ave, Rome, Italy",
+    "phone": "+39 06 1234567",
+    "emailAddress": "support@treniitalia.app"
   }
 }

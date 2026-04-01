@@ -57,5 +57,19 @@
   },
   "weather": {
     "title": "Meteo"
+  },
+  "support": {
+    "title": "Assistenza Clienti",
+    "subtitle": "Come possiamo aiutarti oggi?",
+    "name": "Il tuo nome",
+    "email": "Indirizzo Email",
+    "subject": "Oggetto",
+    "message": "Messaggio",
+    "send": "Invia Messaggio",
+    "successMessage": "Messaggio inviato con successo! Ti contatteremo presto.",
+    "contactInfo": "Informazioni di Contatto",
+    "address": "Viale delle Stazioni 123, Roma, Italia",
+    "phone": "+39 06 1234567",
+    "emailAddress": "support@treniitalia.app"
   }
 }

@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useLocale } from '@/context/LocaleContext';
 import Header from '@/components/Header/Header';
 import SearchBox from '@/components/SearchBox/SearchBox';
@@ -155,6 +156,10 @@ export default function Home() {
         >
           ViaggiaTreno
         </a>
+        {' • '}
+        <Link href="/support" className={styles.footerLink}>
+          {t('support.title')}
+        </Link>
       </footer>
     </div>
   );
