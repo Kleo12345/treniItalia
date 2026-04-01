@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useLocale } from '@/context/LocaleContext';
+import { useFollowedTrains } from '@/context/FollowedTrainsContext';
 import Header from '@/components/Header/Header';
 import SearchBox from '@/components/SearchBox/SearchBox';
 import StationBoard from '@/components/StationBoard/StationBoard';
@@ -19,6 +20,7 @@ type View = 'home' | 'station' | 'train';
 
 export default function Home() {
   const { t, lang, setLang } = useLocale();
+  const { followedTrains } = useFollowedTrains();
 
   const [view, setView] = useState<View>('home');
   const [selectedStation, setSelectedStation] = useState<Station | null>(null);
@@ -113,6 +115,30 @@ export default function Home() {
                 </label>
               </div>
             </div>
+            
+            {followedTrains.length > 0 && (
+              <div className={styles.followedSection}>
+                <h2 className={styles.followedTitle}>{t('train.followedTrains', { defaultValue: 'Treni Seguiti' })}</h2>
+                <div className={styles.followedGrid}>
+                  {followedTrains.map(treno => (
+                    <div 
+                      key={treno.numeroTreno} 
+                      className={`glass-panel ${styles.followedCard}`}
+                      onClick={() => handleSelectTrain(treno.numeroTreno)}
+                    >
+                      <div className={styles.followedCardHeader}>
+                        <span className={styles.followedNumber}>{treno.numeroTreno}</span>
+                        <span className={styles.followedCategory}>{treno.categoriaDescrizione}</span>
+                      </div>
+                      <div className={styles.followedRoute}>
+                        {treno.origine} → {treno.destinazione}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            
             <NewsBanner />
           </>
         )}

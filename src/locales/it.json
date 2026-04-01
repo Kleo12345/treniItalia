@@ -37,7 +37,11 @@
     "actual": "Effettivo",
     "notDeparted": "Non partito",
     "travelling": "In viaggio",
-    "stops": "Fermate"
+    "stops": "Fermate",
+    "follow": "Segui",
+    "unfollow": "Non seguire",
+    "followedTrains": "Treni Seguiti",
+    "followed": "Seguito"
   },
   "news": {
     "title": "Notizie Live",

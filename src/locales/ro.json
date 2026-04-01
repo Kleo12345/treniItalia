@@ -37,7 +37,11 @@
     "actual": "Real",
     "notDeparted": "Neplecat",
     "travelling": "În mișcare",
-    "stops": "Opriri"
+    "stops": "Opriri",
+    "follow": "Urmărește",
+    "unfollow": "Nu mai urmări",
+    "followedTrains": "Trenuri Urmărite",
+    "followed": "Urmărit"
   },
   "news": {
     "title": "Știri Live",

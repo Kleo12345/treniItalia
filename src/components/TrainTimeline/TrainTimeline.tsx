@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useLocale } from '@/context/LocaleContext';
+import { useFollowedTrains } from '@/context/FollowedTrainsContext';
 import styles from './TrainTimeline.module.css';
 
 interface FermataStop {
@@ -50,6 +51,7 @@ function formatMs(ms: number | null | undefined): string {
 
 export default function TrainTimeline({ trainNumber, onBack, delayThreshold }: TrainTimelineProps) {
   const { t } = useLocale();
+  const { isFollowed, followTrain, unfollowTrain } = useFollowedTrains();
   const [data, setData] = useState<TrainData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -111,19 +113,38 @@ export default function TrainTimeline({ trainNumber, onBack, delayThreshold }: T
       ) : data ? (
         <>
           <div className={styles.header}>
-            <h2 className={styles.trainTitle}>
-              {t('train.trainNumber', { number: String(data.numeroTreno) })}
-              {data.categoriaDescrizione && (
-                <span className={styles.badge}>{data.categoriaDescrizione}</span>
-              )}
-              {data.ritardo !== undefined && data.ritardo > 0 && (
-                <span className={styles.badge} style={{
-                  background: data.ritardo >= delayThreshold ? 'var(--status-cancelled)' : 'var(--status-delayed)'
-                }}>
-                  +{data.ritardo} min
-                </span>
-              )}
-            </h2>
+            <div className={styles.headerTop}>
+              <h2 className={styles.trainTitle}>
+                {t('train.trainNumber', { number: String(data.numeroTreno) })}
+                {data.categoriaDescrizione && (
+                  <span className={styles.badge}>{data.categoriaDescrizione}</span>
+                )}
+                {data.ritardo !== undefined && data.ritardo > 0 && (
+                  <span className={styles.badge} style={{
+                    background: data.ritardo >= delayThreshold ? 'var(--status-cancelled)' : 'var(--status-delayed)'
+                  }}>
+                    +{data.ritardo} min
+                  </span>
+                )}
+              </h2>
+              <button 
+                onClick={() => {
+                  if (isFollowed(String(data.numeroTreno))) {
+                    unfollowTrain(String(data.numeroTreno));
+                  } else {
+                    followTrain({
+                      numeroTreno: String(data.numeroTreno),
+                      origine: data.origine || 'Unknown',
+                      destinazione: data.destinazione || 'Unknown',
+                      categoriaDescrizione: data.categoriaDescrizione || 'Treno'
+                    });
+                  }
+                }}
+                className={styles.followBtn}
+              >
+                {isFollowed(String(data.numeroTreno)) ? '★ ' + t('train.unfollow', { defaultValue: 'Unfollow' }) : '☆ ' + t('train.follow', { defaultValue: 'Follow' })}
+              </button>
+            </div>
             <p className={styles.routeLabel}>
               {data.origine || '?'} → {data.destinazione || '?'}
             </p>

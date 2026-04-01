@@ -37,7 +37,11 @@
     "actual": "实际",
     "notDeparted": "未发车",
     "travelling": "行进中",
-    "stops": "停靠"
+    "stops": "停靠",
+    "follow": "关注",
+    "unfollow": "取消关注",
+    "followedTrains": "关注的列车",
+    "followed": "已关注"
   },
   "news": {
     "title": "新闻",

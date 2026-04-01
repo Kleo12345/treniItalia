@@ -37,7 +37,11 @@
     "actual": "Факт",
     "notDeparted": "Не відправився",
     "travelling": "В дорозі",
-    "stops": "Зупинки"
+    "stops": "Зупинки",
+    "follow": "Стежити",
+    "unfollow": "Не стежити",
+    "followedTrains": "Відстежувані поїзди",
+    "followed": "Відстежується"
   },
   "news": {
     "title": "Новини",

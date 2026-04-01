@@ -37,7 +37,11 @@
     "actual": "Real",
     "notDeparted": "S'është nisur",
     "travelling": "Udhëtim",
-    "stops": "Ndalime"
+    "stops": "Ndalime",
+    "follow": "Ndiq",
+    "unfollow": "Mos ndiq",
+    "followedTrains": "Trenat e Ndjekur",
+    "followed": "Ndjekur"
   },
   "news": {
     "title": "Lajme",

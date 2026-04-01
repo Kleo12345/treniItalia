@@ -88,3 +88,59 @@
     padding: 1rem;
   }
 }
+
+.followedSection {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.followedTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.followedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.followedCard {
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-color);
+}
+
+.followedCard:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.followedCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.followedNumber {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.followedCategory {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.followedRoute {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}

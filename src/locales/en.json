@@ -37,7 +37,11 @@
     "actual": "Actual",
     "notDeparted": "Not departed yet",
     "travelling": "Travelling",
-    "stops": "Stops"
+    "stops": "Stops",
+    "follow": "Follow",
+    "unfollow": "Unfollow",
+    "followedTrains": "Followed Trains",
+    "followed": "Followed"
   },
   "news": {
     "title": "Live News",

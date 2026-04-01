@@ -37,7 +37,11 @@
     "actual": "فعلي",
     "notDeparted": "لم يغادر",
     "travelling": "في الطريق",
-    "stops": "توقفات"
+    "stops": "توقفات",
+    "follow": "متابعة",
+    "unfollow": "إلغاء المتابعة",
+    "followedTrains": "القطارات المتابعة",
+    "followed": "متابع"
   },
   "news": {
     "title": "أخبار",

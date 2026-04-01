@@ -2,11 +2,14 @@
 
 import { ThemeProvider } from '@/context/ThemeContext';
 import { LocaleProvider } from '@/context/LocaleContext';
+import { FollowedTrainsProvider } from '@/context/FollowedTrainsContext';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
-      <LocaleProvider>{children}</LocaleProvider>
+      <LocaleProvider>
+        <FollowedTrainsProvider>{children}</FollowedTrainsProvider>
+      </LocaleProvider>
     </ThemeProvider>
   );
 }
