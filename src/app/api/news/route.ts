@@ -25,7 +25,18 @@ export async function GET(request: Request) {
     console.error('Error fetching remote news:', error);
   }
 
-  // Merge and return
-  const combinedNews = [...localNews, ...remoteNews];
+  // Merge, filter, and sort
+  let combinedNews = [...localNews, ...remoteNews];
+  
+  // Filter out news older than 30 days (or missing date) to keep it strictly fresh
+  const thirtyDaysAgo = Date.now() - 30 * 24 * 60 * 60 * 1000;
+  combinedNews = combinedNews.filter(item => {
+    const itemDate = item.data || 0;
+    return itemDate > thirtyDaysAgo;
+  });
+
+  // Sort by date descending (newest first)
+  combinedNews.sort((a, b) => (b.data || 0) - (a.data || 0));
+
   return NextResponse.json(combinedNews);
 }

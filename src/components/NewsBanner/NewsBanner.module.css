@@ -20,9 +20,7 @@
 .newsList {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  max-height: 200px;
-  overflow-y: auto;
+  gap: 0.75rem;
 }
 
 .newsItem {
@@ -35,6 +33,24 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+.newsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.newsItemTitle {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+}
+
+.newsItemText {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
 }
 
 .newsItemInfo {

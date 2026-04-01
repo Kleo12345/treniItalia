@@ -23,7 +23,7 @@ export default function NewsBanner() {
         const res = await fetch('/api/news');
         const data = await res.json();
         if (Array.isArray(data)) {
-          setNews(data.slice(0, 5));
+          setNews(data.slice(0, 10));
         }
       } catch {
         /* silent */
@@ -61,8 +61,20 @@ export default function NewsBanner() {
                 })}
               </div>
             )}
-            <div className={styles.newsText}>
-              {item.titolo || item.title || item.testo || item.text || '—'}
+            <div className={styles.newsContent}>
+              {(item.titolo || item.title) && (
+                <div className={styles.newsItemTitle}>
+                  {item.titolo || item.title}
+                </div>
+              )}
+              {(item.testo || item.text) && (
+                <div className={styles.newsItemText}>
+                  {item.testo || item.text}
+                </div>
+              )}
+              {!(item.titolo || item.title || item.testo || item.text) && (
+                <div className={styles.newsItemText}>—</div>
+              )}
             </div>
           </div>
         ))}
