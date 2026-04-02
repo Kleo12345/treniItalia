@@ -42,28 +42,43 @@ export const FollowedTrainsProvider = ({ children }: { children: React.ReactNode
   const [followedTrains, setFollowedTrains] = useState<FollowedTrain[]>([]);
   const [telegramSettings, setTelegramSettings] = useState<TelegramSettings>(defaultTelegram);
   const [isClient, setIsClient] = useState(false);
+  const [isHydrated, setIsHydrated] = useState(false);
 
   // Load from localStorage once on client
   useEffect(() => {
     setIsClient(true);
     try {
       const storedTrains = localStorage.getItem('followedTrains');
-      if (storedTrains) setFollowedTrains(JSON.parse(storedTrains));
+      if (storedTrains) {
+        const parsed = JSON.parse(storedTrains);
+        // Cleanup corrupted 'NUMBER' state from previous failed tests
+        const cleaned = Array.isArray(parsed) ? parsed.filter((t: any) => t.numeroTreno !== 'NUMBER') : [];
+        setFollowedTrains(cleaned);
+      }
 
       const storedTelegram = localStorage.getItem('telegramSettings');
       if (storedTelegram) setTelegramSettings(JSON.parse(storedTelegram));
     } catch (e) {
       console.error('Failed to load from localStorage', e);
     }
+    setIsHydrated(true);
   }, []);
 
-  const saveTrainsToStorage = (trains: FollowedTrain[]) => {
-    localStorage.setItem('followedTrains', JSON.stringify(trains));
-  };
+  // Persist to localStorage whenever state changes (ONLY after hydration)
+  useEffect(() => {
+    if (isHydrated) {
+      localStorage.setItem('followedTrains', JSON.stringify(followedTrains));
+    }
+  }, [followedTrains, isHydrated]);
+
+  useEffect(() => {
+    if (isHydrated) {
+      localStorage.setItem('telegramSettings', JSON.stringify(telegramSettings));
+    }
+  }, [telegramSettings, isHydrated]);
 
   const saveTelegramSettings = (s: TelegramSettings) => {
     setTelegramSettings(s);
-    localStorage.setItem('telegramSettings', JSON.stringify(s));
   };
 
   // Proxy through our own server-side route for security
@@ -86,10 +101,10 @@ export const FollowedTrainsProvider = ({ children }: { children: React.ReactNode
 
   const followTrain = (train: Omit<FollowedTrain, 'lastStationName'>) => {
     setFollowedTrains((prev) => {
-      if (prev.find((t) => t.numeroTreno === train.numeroTreno)) return prev;
-      const newList = [...prev, train];
-      saveTrainsToStorage(newList);
-      return newList;
+      if (prev.find((t) => t.numeroTreno === train.numeroTreno)) {
+        return prev;
+      }
+      return [...prev, train];
     });
 
     if ('Notification' in window && Notification.permission !== 'granted' && Notification.permission !== 'denied') {
@@ -100,11 +115,7 @@ export const FollowedTrainsProvider = ({ children }: { children: React.ReactNode
   };
 
   const unfollowTrain = (numeroTreno: string) => {
-    setFollowedTrains((prev) => {
-      const newList = prev.filter((t) => t.numeroTreno !== numeroTreno);
-      saveTrainsToStorage(newList);
-      return newList;
-    });
+    setFollowedTrains((prev) => prev.filter((t) => t.numeroTreno !== numeroTreno));
   };
 
   const isFollowed = (numeroTreno: string) =>
@@ -163,7 +174,6 @@ export const FollowedTrainsProvider = ({ children }: { children: React.ReactNode
 
       if (updates) {
         setFollowedTrains(updatedTrains);
-        saveTrainsToStorage(updatedTrains);
       }
     };
 

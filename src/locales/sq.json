@@ -59,6 +59,15 @@
     "delayThreshold": "Alarm vonese",
     "save": "Ruaj"
   },
+  "ai": {
+    "greeting": "Përshëndetje! Unë jam Freccia Lenta 🐢🚄 – asistenti më i ngadaltë në botë. Si mund të (mos) ju ndihmoj sot?",
+    "subtitle": "Asistenti juaj hekurudhor (me vonesë)",
+    "placeholder": "Numri i trenit ose komanda...",
+    "errorConnection": "Më vjen keq, kam mbetur në një tunel... (Ollama error) 🐢",
+    "errorService": "Shërbimi është pezulluar përkohësisht. (Ollama nuk përgjigjet) 🐢",
+    "tooltip": "Hap Freccia Lenta",
+    "close": "Mbyll"
+  },
   "weather": {
     "title": "Moti"
   },

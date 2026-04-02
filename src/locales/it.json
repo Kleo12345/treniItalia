@@ -88,5 +88,15 @@
     "testMessage": "Notifica di prova. La tua integrazione Telegram funziona!",
     "testSuccess": "Messaggio di prova inviato con successo!",
     "fillBoth": "Compila entrambi i campi prima."
+  },
+  "ai": {
+    "greeting": "Ciao! Sono Freccia Lenta 🐢🚄 – l'assistente più lento del mondo. Come posso (non) aiutarti oggi?",
+    "subtitle": "Il tuo assistente ferroviario (in ritardo)",
+    "placeholder": "Numero treno o comando...",
+    "searching": "Cerco treni da {from} a {to}...",
+    "errorConnection": "Scusa, sono rimasto bloccato in galleria... (Ollama error) 🐢",
+    "errorService": "Servizio temporaneamente sospeso. (Ollama non risponde) 🐢",
+    "tooltip": "Apri Freccia Lenta",
+    "close": "Chiudi"
   }
 }

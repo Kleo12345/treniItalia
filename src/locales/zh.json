@@ -59,6 +59,15 @@
     "delayThreshold": "提醒(分钟)",
     "save": "保存"
   },
+  "ai": {
+    "greeting": "你好！我是 Freccia Lenta 🐢🚄 – 世界上最慢的助手。今天我能（不）怎么帮你？",
+    "subtitle": "您的铁路助手（晚点）",
+    "placeholder": "车次或命令...",
+    "errorConnection": "抱歉，我困在隧道里了... (Ollama error) 🐢",
+    "errorService": "服务暂时中断。(Ollama 没有响应) 🐢",
+    "tooltip": "打开 Freccia Lenta",
+    "close": "关闭"
+  },
   "weather": {
     "title": "天气"
   },

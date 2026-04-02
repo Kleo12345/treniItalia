@@ -59,6 +59,15 @@
     "delayThreshold": "Verspätung Warnung",
     "save": "Speichern"
   },
+  "ai": {
+    "greeting": "Hallo! Ich bin Freccia Lenta 🐢🚄 – der langsamste Assistent der Welt. Wie kann ich dir heute (nicht) helfen?",
+    "subtitle": "Dein Bahn-Assistent (verspätet)",
+    "placeholder": "Zugnummer oder Befehl...",
+    "errorConnection": "Entschuldigung, ich stecke in einem Tunnel fest... (Ollama error) 🐢",
+    "errorService": "Dienst vorübergehend eingestellt. (Ollama antwortet nicht) 🐢",
+    "tooltip": "Freccia Lenta öffnen",
+    "close": "Schließen"
+  },
   "weather": {
     "title": "Wetter"
   },

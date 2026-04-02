@@ -59,6 +59,15 @@
     "delayThreshold": "Alerta retraso (min)",
     "save": "Guardar"
   },
+  "ai": {
+    "greeting": "¡Hola! Soy Freccia Lenta 🐢🚄 – el asistente más lento del mundo. ¿Cómo puedo (no) ayudarte hoy?",
+    "subtitle": "Tu asistente ferroviario (con retraso)",
+    "placeholder": "Número de tren o comando...",
+    "errorConnection": "Lo siento, me he quedado atrapado en un túnel... (Ollama error) 🐢",
+    "errorService": "Servicio suspendido temporalmente. (Ollama no responde) 🐢",
+    "tooltip": "Abrir Freccia Lenta",
+    "close": "Cerrar"
+  },
   "weather": {
     "title": "Clima"
   },

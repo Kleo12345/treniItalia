@@ -88,5 +88,15 @@
     "testMessage": "Test notification. Your Telegram integration is working!",
     "testSuccess": "Test message sent successfully!",
     "fillBoth": "Please fill in both fields first."
+  },
+  "ai": {
+    "greeting": "Ciao! I am Freccia Lenta 🐢🚄 – the slowest assistant in the world. How can I (not) help you today?",
+    "subtitle": "Your railway assistant (late)",
+    "placeholder": "Train number or command...",
+    "searching": "Searching for {from} to {to}...",
+    "errorConnection": "Sorry, I'm stuck in a tunnel... (AI connection failed) 🐢",
+    "errorService": "Service temporarily suspended. (AI not responding) 🐢",
+    "tooltip": "Open Freccia Lenta",
+    "close": "Close"
   }
 }

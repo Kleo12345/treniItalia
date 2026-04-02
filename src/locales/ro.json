@@ -74,5 +74,15 @@
     "testMessage": "Notificare test. Integrarea ta Telegram funcționează!",
     "testSuccess": "Mesajul test a fost trimis cu succes!",
     "fillBoth": "Completați ambele câmpuri mai întâi."
+  },
+  "ai": {
+    "greeting": "Bună! Sunt Freccia Lenta 🐢🚄 – cel mai lent asistent din lume. Cum te pot (nu) ajuta astăzi?",
+    "subtitle": "Asistentul tău feroviar (întârziat)",
+    "placeholder": "Număr tren sau comandă...",
+    "searching": "Caut trenuri de la {from} la {to}...",
+    "errorConnection": "Scuze, am rămas blocat într-un tunel... (Ollama error) 🐢",
+    "errorService": "Serviciu suspendat temporar. (Ollama nu răspunde) 🐢",
+    "tooltip": "Deschide Freccia Lenta",
+    "close": "Închide"
   }
 }
