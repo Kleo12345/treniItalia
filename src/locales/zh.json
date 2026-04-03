@@ -69,7 +69,13 @@
     "close": "关闭"
   },
   "weather": {
-    "title": "天气"
+    "title": "天气",
+    "loading": "加载天气中...",
+    "error": "天气不可用",
+    "wind": "风速",
+    "humidity": "湿度",
+    "source": "来源",
+    "refresh": "刷新"
   },
   "telegram": {
     "title": "Telegram 通知",

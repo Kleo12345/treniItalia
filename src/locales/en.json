@@ -60,7 +60,13 @@
     "save": "Save"
   },
   "weather": {
-    "title": "Weather"
+    "title": "Weather",
+    "loading": "Loading weather...",
+    "error": "Weather unavailable",
+    "wind": "Wind",
+    "humidity": "Humidity",
+    "source": "Source",
+    "refresh": "Refresh"
   },
   "support": {
     "title": "Customer Support",

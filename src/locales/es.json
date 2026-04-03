@@ -69,7 +69,13 @@
     "close": "Cerrar"
   },
   "weather": {
-    "title": "Clima"
+    "title": "Clima",
+    "loading": "Cargando clima...",
+    "error": "Clima no disponible",
+    "wind": "Viento",
+    "humidity": "Humedad",
+    "source": "Fuente",
+    "refresh": "Actualizar"
   },
   "telegram": {
     "title": "Notificaciones de Telegram",

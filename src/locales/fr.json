@@ -69,7 +69,13 @@
     "close": "Fermer"
   },
   "weather": {
-    "title": "Météo"
+    "title": "Météo",
+    "loading": "Chargement météo...",
+    "error": "Météo indisponible",
+    "wind": "Vent",
+    "humidity": "Humidité",
+    "source": "Source",
+    "refresh": "Actualiser"
   },
   "telegram": {
     "title": "Notifications Telegram",

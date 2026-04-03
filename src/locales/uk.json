@@ -60,7 +60,13 @@
     "save": "Ок"
   },
   "weather": {
-    "title": "Погода"
+    "title": "Погода",
+    "loading": "Завантаження погоди...",
+    "error": "Погода недоступна",
+    "wind": "Вітер",
+    "humidity": "Вологість",
+    "source": "Джерело",
+    "refresh": "Оновити"
   },
   "telegram": {
     "title": "Повідомлення Telegram",

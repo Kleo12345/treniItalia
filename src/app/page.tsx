@@ -10,6 +10,7 @@ import StationBoard from '@/components/StationBoard/StationBoard';
 import TrainTimeline from '@/components/TrainTimeline/TrainTimeline';
 import NewsBanner from '@/components/NewsBanner/NewsBanner';
 import TelegramSettings from '@/components/TelegramSettings/TelegramSettings';
+import WeatherWidget from '@/components/WeatherWidget/WeatherWidget';
 import styles from './page.module.css';
 
 interface Station {
@@ -143,7 +144,9 @@ export default function Home() {
               </div>
             </div>
             {showTelegram && <TelegramSettings onClose={() => setShowTelegram(false)} />}
-            
+
+            <WeatherWidget />
+
             {followedTrains.length > 0 && (
               <div className={styles.followedSection}>
                 <h2 className={styles.followedTitle}>{t('train.followedTrains', { defaultValue: 'Treni Seguiti' })}</h2>

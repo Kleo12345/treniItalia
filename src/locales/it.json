@@ -60,7 +60,13 @@
     "save": "Salva"
   },
   "weather": {
-    "title": "Meteo"
+    "title": "Meteo",
+    "loading": "Caricamento meteo...",
+    "error": "Meteo non disponibile",
+    "wind": "Vento",
+    "humidity": "Umidità",
+    "source": "Fonte",
+    "refresh": "Aggiorna"
   },
   "support": {
     "title": "Assistenza Clienti",

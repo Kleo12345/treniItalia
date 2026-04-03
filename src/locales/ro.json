@@ -60,7 +60,13 @@
     "save": "Salvează"
   },
   "weather": {
-    "title": "Vreme"
+    "title": "Vreme",
+    "loading": "Se încarcă vremea...",
+    "error": "Vreme indisponibilă",
+    "wind": "Vânt",
+    "humidity": "Umiditate",
+    "source": "Sursă",
+    "refresh": "Actualizați"
   },
   "telegram": {
     "title": "Notificări Telegram",

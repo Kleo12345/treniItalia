@@ -69,7 +69,13 @@
     "close": "Mbyll"
   },
   "weather": {
-    "title": "Moti"
+    "title": "Moti",
+    "loading": "Po ngarkohet...",
+    "error": "Moti jo i disponueshëm",
+    "wind": "Era",
+    "humidity": "Lagështia",
+    "source": "Burimi",
+    "refresh": "Rifresko"
   },
   "telegram": {
     "title": "Njoftimet Telegram",
