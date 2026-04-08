@@ -170,16 +170,6 @@ The live map feature will show the real-time position of trains between stations
 
 This feature is being developed by a team member and will integrate with the existing `TrainTimeline` component's stop data.
 
----
-
-## 👥 Team
-
-| Members| Area |
-|---|---|
-| Student | Frontend, API integration, UX, PWA |
-| Teammate | Live map, security |
-
----
 
 ## 📄 License
 
