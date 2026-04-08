@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useLocale } from '@/context/LocaleContext';
 import { useFollowedTrains } from '@/context/FollowedTrainsContext';
+import DelayChart from '@/components/DelayChart/DelayChart';
 import styles from './TrainTimeline.module.css';
 
 interface FermataStop {
@@ -149,6 +150,18 @@ export default function TrainTimeline({ trainNumber, onBack, delayThreshold }: T
               {data.origine || '?'} → {data.destinazione || '?'}
             </p>
           </div>
+
+          {data.fermate && data.fermate.length > 1 && (
+            <div className="glass-panel" style={{ padding: '1rem 1.25rem 0.75rem' }}>
+              <DelayChart
+                stops={data.fermate.map(f => ({
+                  name: f.stazione,
+                  delay: f.ritardoArrivo ?? f.ritardoPartenza ?? f.ritardo ?? 0
+                }))}
+                threshold={delayThreshold}
+              />
+            </div>
+          )}
 
           <div className="glass-panel" style={{ padding: '1.5rem' }}>
             {data.fermate && data.fermate.length > 0 ? (

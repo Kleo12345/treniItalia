@@ -9,7 +9,8 @@
   "search": {
     "placeholder": "Buscar estación o tren...",
     "recentStations": "Recientes",
-    "clearHistory": "Borrar"
+    "clearHistory": "Borrar",
+    "quick": "Búsqueda Rápida"
   },
   "station": {
     "departures": "Salidas",
@@ -41,7 +42,8 @@
     "follow": "Seguir",
     "unfollow": "Dejar de seguir",
     "followedTrains": "Trenes Seguidos",
-    "followed": "Seguido"
+    "followed": "Seguido",
+    "delayPerStop": "Retraso por parada (min)"
   },
   "news": {
     "title": "Noticias Live",
@@ -89,5 +91,15 @@
     "testMessage": "¡Notificación de prueba. Tu integración de Telegram funciona!",
     "testSuccess": "¡Mensaje de prueba enviado con éxito!",
     "fillBoth": "Por favor, completa ambos campos primero."
+  },
+  "planner": {
+    "title": "Planificador de Viajes",
+    "from": "Desde",
+    "to": "A",
+    "datetime": "Fecha y Hora",
+    "search": "Buscar",
+    "option": "Opción",
+    "changes": "cambios",
+    "noResults": "No se encontraron trenes directos para esta ruta."
   }
 }

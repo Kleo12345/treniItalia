@@ -9,7 +9,8 @@
   "search": {
     "placeholder": "Bahnhof oder Zug suchen...",
     "recentStations": "Zuletzt",
-    "clearHistory": "Verlauf löschen"
+    "clearHistory": "Verlauf löschen",
+    "quick": "Schnellsuche"
   },
   "station": {
     "departures": "Abfahrten",
@@ -41,7 +42,8 @@
     "follow": "Folgen",
     "unfollow": "Entfolgen",
     "followedTrains": "Verfolgte Züge",
-    "followed": "Gefolgt"
+    "followed": "Gefolgt",
+    "delayPerStop": "Verspätung pro Halt (min)"
   },
   "news": {
     "title": "Live-News",
@@ -89,5 +91,15 @@
     "testMessage": "Testbenachrichtigung. Deine Telegram-Integration funktioniert!",
     "testSuccess": "Testnachricht erfolgreich gesendet!",
     "fillBoth": "Bitte zuerst beide Felder ausfüllen."
+  },
+  "planner": {
+    "title": "Reiseplaner",
+    "from": "Von",
+    "to": "Nach",
+    "datetime": "Datum & Uhrzeit",
+    "search": "Suchen",
+    "option": "Option",
+    "changes": "Umstiege",
+    "noResults": "Keine direkten Züge gefunden."
   }
 }

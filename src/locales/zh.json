@@ -9,7 +9,8 @@
   "search": {
     "placeholder": "搜索车站/车次...",
     "recentStations": "最近",
-    "clearHistory": "清除"
+    "clearHistory": "清除",
+    "quick": "快速搜索"
   },
   "station": {
     "departures": "出发",
@@ -41,7 +42,8 @@
     "follow": "关注",
     "unfollow": "取消关注",
     "followedTrains": "关注的列车",
-    "followed": "已关注"
+    "followed": "已关注",
+    "delayPerStop": "每站延迟 (分钟)"
   },
   "news": {
     "title": "新闻",
@@ -89,5 +91,15 @@
     "testMessage": "测试通知。您的 Telegram 集成正常运行！",
     "testSuccess": "测试消息发送成功！",
     "fillBoth": "请先填写两个字段。"
+  },
+  "planner": {
+    "title": "行程规划",
+    "from": "从",
+    "to": "到",
+    "datetime": "日期与时间",
+    "search": "搜索",
+    "option": "选项",
+    "changes": "换乘",
+    "noResults": "找不到此路线的直达列车。"
   }
 }

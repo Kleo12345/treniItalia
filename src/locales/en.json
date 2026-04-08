@@ -9,7 +9,8 @@
   "search": {
     "placeholder": "Search station or train number...",
     "recentStations": "Recent Stations",
-    "clearHistory": "Clear History"
+    "clearHistory": "Clear History",
+    "quick": "Quick Search"
   },
   "station": {
     "departures": "Departures",
@@ -41,7 +42,8 @@
     "follow": "Follow",
     "unfollow": "Unfollow",
     "followedTrains": "Followed Trains",
-    "followed": "Followed"
+    "followed": "Followed",
+    "delayPerStop": "Delay per stop (min)"
   },
   "news": {
     "title": "Live News",
@@ -104,5 +106,15 @@
     "errorService": "Service temporarily suspended. (AI not responding) 🐢",
     "tooltip": "Open Freccia Lenta",
     "close": "Close"
+  },
+  "planner": {
+    "title": "Journey Planner",
+    "from": "From",
+    "to": "To",
+    "datetime": "Date & Time",
+    "search": "Search",
+    "option": "Option",
+    "changes": "changes",
+    "noResults": "No direct trains found for this route."
   }
 }

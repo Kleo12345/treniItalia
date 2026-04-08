@@ -6,7 +6,7 @@
 
 .content {
   flex: 1;
-  max-width: 960px;
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   padding: 2rem;
@@ -14,12 +14,21 @@
 
 .hero {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   user-select: none;
 }
 
 .hero h1 {
   cursor: default;
+}
+
+@media (min-width: 960px) {
+  .hero {
+    text-align: left;
+  }
+  .searchWrapper, .settingsRow {
+    justify-content: flex-start;
+  }
 }
 
 .heroSubtitle {
@@ -133,11 +142,6 @@
   }
 }
 
-.followedSection {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
 .followedTitle {
   font-size: 1.25rem;
   font-weight: 600;
@@ -187,4 +191,70 @@
 .followedRoute {
   font-size: 0.85rem;
   color: var(--text-secondary);
+}
+
+.homeGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 960px) {
+  .homeGrid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+.tabContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.tabButton {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.tabButton:hover {
+  color: var(--text-primary);
+}
+
+.tabButton.active {
+  color: var(--accent-primary);
+}
+
+.tabButton.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.65rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-primary);
+  border-radius: 2px 2px 0 0;
 }

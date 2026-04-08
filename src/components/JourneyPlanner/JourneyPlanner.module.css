@@ -1,0 +1,215 @@
+.planner {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.plannerTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.inputLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.inputField {
+  padding: 0.6rem 0.85rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.inputField:focus {
+  border-color: var(--accent-primary);
+}
+
+.rowInputs {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.rowInputs .inputGroup {
+  flex: 1;
+}
+
+.searchBtn {
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px;
+  background: var(--accent-primary);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.searchBtn:hover {
+  background: var(--accent-primary-hover);
+}
+
+.searchBtn:active {
+  transform: scale(0.98);
+}
+
+.searchBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Suggestions dropdown */
+.suggestionsWrap {
+  position: relative;
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  max-height: 180px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  margin-top: 2px;
+}
+
+.suggestionItem {
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.12s;
+}
+
+.suggestionItem:hover,
+.suggestionActive {
+  background: var(--surface-hover);
+}
+
+/* Results */
+.resultsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.solutionCard {
+  padding: 1rem 1.15rem;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  transition: border-color 0.2s;
+}
+
+.solutionCard:hover {
+  border-color: var(--accent-primary);
+}
+
+.solutionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.solutionBadge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 6px;
+  background: var(--accent-primary);
+  color: #fff;
+}
+
+.solutionMeta {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 1rem;
+}
+
+.legRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0;
+  font-size: 0.82rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.legRow:first-child {
+  border-top: none;
+}
+
+.legTrainNum {
+  font-weight: 600;
+  min-width: 70px;
+  color: var(--accent-primary);
+  cursor: pointer;
+}
+
+.legTrainNum:hover {
+  text-decoration: underline;
+}
+
+.legCategory {
+  font-size: 0.68rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background: var(--surface-hover);
+  color: var(--text-secondary);
+}
+
+.legTimes {
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* Empty / error states */
+.emptyState {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  .rowInputs {
+    flex-direction: column;
+  }
+}

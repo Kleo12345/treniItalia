@@ -9,7 +9,8 @@
   "search": {
     "placeholder": "Шукати...",
     "recentStations": "Нещодавні",
-    "clearHistory": "Очистити"
+    "clearHistory": "Очистити",
+    "quick": "Швидкий Пошук"
   },
   "station": {
     "departures": "Відправлення",
@@ -41,7 +42,8 @@
     "follow": "Стежити",
     "unfollow": "Не стежити",
     "followedTrains": "Відстежувані поїзди",
-    "followed": "Відстежується"
+    "followed": "Відстежується",
+    "delayPerStop": "Затримка на зупинці (хв)"
   },
   "news": {
     "title": "Новини",
@@ -89,5 +91,15 @@
     "errorService": "Сервіс тимчасово призупинено. (Ollama не відповідає) 🐢",
     "tooltip": "Відкрити Freccia Lenta",
     "close": "Закрити"
+  },
+  "planner": {
+    "title": "Планувальник Подорожі",
+    "from": "Від",
+    "to": "До",
+    "datetime": "Дата та Час",
+    "search": "Пошук",
+    "option": "Варіант",
+    "changes": "пересадок",
+    "noResults": "Прямих поїздів не знайдено для цього маршруту."
   }
 }

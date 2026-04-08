@@ -9,7 +9,8 @@
   "search": {
     "placeholder": "Kërko stacion/tren...",
     "recentStations": "Së fundmi",
-    "clearHistory": "Fshi"
+    "clearHistory": "Fshi",
+    "quick": "Kërkim i Shpejtë"
   },
   "station": {
     "departures": "Nisjet",
@@ -41,7 +42,8 @@
     "follow": "Ndiq",
     "unfollow": "Mos ndiq",
     "followedTrains": "Trenat e Ndjekur",
-    "followed": "Ndjekur"
+    "followed": "Ndjekur",
+    "delayPerStop": "Vonesa për stacion (min)"
   },
   "news": {
     "title": "Lajme",
@@ -89,5 +91,15 @@
     "testMessage": "Njoftim provë. Integrimi yt i Telegram funksionon!",
     "testSuccess": "Mesazhi i provës u dërgua me sukses!",
     "fillBoth": "Ju lutemi plotësoni të dy fushat fillimisht."
+  },
+  "planner": {
+    "title": "Planifikuesi i Udhëtimit",
+    "from": "Nga",
+    "to": "Në",
+    "datetime": "Data & Ora",
+    "search": "Kërko",
+    "option": "Opsioni",
+    "changes": "ndryshime",
+    "noResults": "Nuk u gjetën trena direkt për këtë rrugë."
   }
 }

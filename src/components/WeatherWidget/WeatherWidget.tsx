@@ -14,7 +14,7 @@ interface WeatherData {
 }
 
 export default function WeatherWidget() {
-  const { t } = useLocale();
+  const { t, lang } = useLocale();
   const [data, setData]       = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError]     = useState(false);
@@ -26,7 +26,7 @@ export default function WeatherWidget() {
     setLoading((prev) => (manual ? prev : true));
     setError(false);
     try {
-      const res = await fetch('/api/weather');
+      const res = await fetch(`/api/weather?lang=${lang}`);
       if (!res.ok) throw new Error('failed');
       const json = await res.json();
       if (json.error) throw new Error(json.error);

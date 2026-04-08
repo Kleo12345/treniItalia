@@ -9,7 +9,8 @@
   "search": {
     "placeholder": "Rechercher gare / train...",
     "recentStations": "Récents",
-    "clearHistory": "Effacer"
+    "clearHistory": "Effacer",
+    "quick": "Recherche Rapide"
   },
   "station": {
     "departures": "Départs",
@@ -41,7 +42,8 @@
     "follow": "Suivre",
     "unfollow": "Ne plus suivre",
     "followedTrains": "Trains Suivis",
-    "followed": "Suivi"
+    "followed": "Suivi",
+    "delayPerStop": "Retard par arrêt (min)"
   },
   "news": {
     "title": "Actualités Live",
@@ -89,5 +91,15 @@
     "testMessage": "Notification test. Votre intégration Telegram fonctionne!",
     "testSuccess": "Message test envoyé avec succès!",
     "fillBoth": "Veuillez remplir les deux champs d'abord."
+  },
+  "planner": {
+    "title": "Planificateur de Voyage",
+    "from": "De",
+    "to": "À",
+    "datetime": "Date & Heure",
+    "search": "Rechercher",
+    "option": "Option",
+    "changes": "changements",
+    "noResults": "Aucun train direct trouvé."
   }
 }

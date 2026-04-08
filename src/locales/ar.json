@@ -9,7 +9,8 @@
   "search": {
     "placeholder": "بحث...",
     "recentStations": "السابقة",
-    "clearHistory": "مسح"
+    "clearHistory": "مسح",
+    "quick": "بحث سريع"
   },
   "station": {
     "departures": "مغادرة",
@@ -41,7 +42,8 @@
     "follow": "متابعة",
     "unfollow": "إلغاء المتابعة",
     "followedTrains": "القطارات المتابعة",
-    "followed": "متابع"
+    "followed": "متابع",
+    "delayPerStop": "تأخير لكل محطة (دقيقة)"
   },
   "news": {
     "title": "أخبار",
@@ -89,5 +91,15 @@
     "errorService": "الخدمة معطلة مؤقتاً. (Ollama لا يستجيب) 🐢",
     "tooltip": "افتح فريتسا لينتا",
     "close": "إغلاق"
+  },
+  "planner": {
+    "title": "مخطط الرحلة",
+    "from": "من",
+    "to": "إلى",
+    "datetime": "التاريخ والوقت",
+    "search": "بحث",
+    "option": "خيار",
+    "changes": "تغيير",
+    "noResults": "لا توجد قطارات مباشرة لهذه الرحلة."
   }
 }

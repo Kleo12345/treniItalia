@@ -9,7 +9,8 @@
   "search": {
     "placeholder": "Caută stație sau tren...",
     "recentStations": "Recente",
-    "clearHistory": "Șterge"
+    "clearHistory": "Șterge",
+    "quick": "Căutare Rapidă"
   },
   "station": {
     "departures": "Plecări",
@@ -41,7 +42,8 @@
     "follow": "Urmărește",
     "unfollow": "Nu mai urmări",
     "followedTrains": "Trenuri Urmărite",
-    "followed": "Urmărit"
+    "followed": "Urmărit",
+    "delayPerStop": "Întârziere per stație (min)"
   },
   "news": {
     "title": "Știri Live",
@@ -90,5 +92,15 @@
     "errorService": "Serviciu suspendat temporar. (Ollama nu răspunde) 🐢",
     "tooltip": "Deschide Freccia Lenta",
     "close": "Închide"
+  },
+  "planner": {
+    "title": "Planificator Călătorie",
+    "from": "De la",
+    "to": "Către",
+    "datetime": "Data & Ora",
+    "search": "Caută",
+    "option": "Opțiunea",
+    "changes": "schimbări",
+    "noResults": "Niciun tren direct găsit pentru această rută."
   }
 }

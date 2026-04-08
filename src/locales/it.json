@@ -9,7 +9,8 @@
   "search": {
     "placeholder": "Cerca stazione o treno...",
     "recentStations": "Ricerche Recenti",
-    "clearHistory": "Cancella Cronologia"
+    "clearHistory": "Cancella Cronologia",
+    "quick": "Ricerca Rapida"
   },
   "station": {
     "departures": "Partenze",
@@ -41,7 +42,8 @@
     "follow": "Segui",
     "unfollow": "Non seguire",
     "followedTrains": "Treni Seguiti",
-    "followed": "Seguito"
+    "followed": "Seguito",
+    "delayPerStop": "Ritardo per fermata (min)"
   },
   "news": {
     "title": "Notizie Live",
@@ -104,5 +106,15 @@
     "errorService": "Servizio temporaneamente sospeso. (Ollama non risponde) 🐢",
     "tooltip": "Apri Freccia Lenta",
     "close": "Chiudi"
+  },
+  "planner": {
+    "title": "Pianifica Viaggio",
+    "from": "Da",
+    "to": "A",
+    "datetime": "Data & Ora",
+    "search": "Cerca",
+    "option": "Opzione",
+    "changes": "cambi",
+    "noResults": "Nessun treno diretto trovato per questa tratta."
   }
 }
