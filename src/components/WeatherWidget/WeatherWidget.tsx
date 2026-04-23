@@ -38,7 +38,7 @@ export default function WeatherWidget() {
       setLoading(false);
       setSpinning(false);
     }
-  }, []);
+  }, [lang]);
 
   // Initial fetch + auto-refresh every 10 min
   useEffect(() => {

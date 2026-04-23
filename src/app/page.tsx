@@ -36,7 +36,10 @@ export default function Home() {
   useEffect(() => {
     try {
       const stored = localStorage.getItem('delayThreshold');
-      if (stored) setDelayThreshold(Number(stored));
+      if (stored) {
+        const val = Number(stored);
+        setTimeout(() => setDelayThreshold(val), 0);
+      }
     } catch { /* noop */ }
   }, []);
 

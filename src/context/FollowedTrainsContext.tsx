@@ -46,22 +46,25 @@ export const FollowedTrainsProvider = ({ children }: { children: React.ReactNode
 
   // Load from localStorage once on client
   useEffect(() => {
-    setIsClient(true);
+    setTimeout(() => setIsClient(true), 0);
     try {
       const storedTrains = localStorage.getItem('followedTrains');
       if (storedTrains) {
         const parsed = JSON.parse(storedTrains);
         // Cleanup corrupted 'NUMBER' state from previous failed tests
-        const cleaned = Array.isArray(parsed) ? parsed.filter((t: any) => t.numeroTreno !== 'NUMBER') : [];
-        setFollowedTrains(cleaned);
+        const cleaned = Array.isArray(parsed) ? parsed.filter((t: FollowedTrain) => t.numeroTreno !== 'NUMBER') : [];
+        setTimeout(() => setFollowedTrains(cleaned), 0);
       }
 
       const storedTelegram = localStorage.getItem('telegramSettings');
-      if (storedTelegram) setTelegramSettings(JSON.parse(storedTelegram));
+      if (storedTelegram) {
+        const parsedTelegram = JSON.parse(storedTelegram);
+        setTimeout(() => setTelegramSettings(parsedTelegram), 0);
+      }
     } catch (e) {
       console.error('Failed to load from localStorage', e);
     }
-    setIsHydrated(true);
+    setTimeout(() => setIsHydrated(true), 0);
   }, []);
 
   // Persist to localStorage whenever state changes (ONLY after hydration)

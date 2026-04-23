@@ -10,6 +10,15 @@ interface Message {
   text: string;
 }
 
+interface Vehicle {
+  numeroTreno: string;
+  categoria: string;
+  origine: string;
+  destinazione: string;
+  partenza: string;
+  arrivo: string;
+}
+
 const BOT_DELAY = 1000; // ms
 
 export default function FrecciaLenta() {
@@ -23,7 +32,7 @@ export default function FrecciaLenta() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const { followedTrains, followTrain, unfollowTrain, isFollowed } = useFollowedTrains();
-  const searchResultsRef = useRef<any[]>([]);
+  const searchResultsRef = useRef<Vehicle[]>([]);
 
   useEffect(() => {
     if (open) {
@@ -37,7 +46,7 @@ export default function FrecciaLenta() {
     if (!text || isTyping) return;
     if (!overrideText) setInput('');
     
-    let currentHistory = messages.map(m => ({
+    const currentHistory = messages.map(m => ({
       role: m.role === 'bot' ? 'assistant' : 'user',
       content: m.text
     }));
@@ -81,12 +90,12 @@ export default function FrecciaLenta() {
           let resultsMsg = "";
           if (sData.solutions && sData.solutions.length > 0) {
             // Flatten all trains from all legs to store in searchResultsRef
-            const allTrains = sData.solutions.flatMap((s: any) => s.legs);
+            const allTrains = sData.solutions.flatMap((s: { legs: Vehicle[] }) => s.legs);
             searchResultsRef.current = allTrains;
 
             resultsMsg = `Ecco le soluzioni trovate da ${from} a ${to}:\n` + 
-                         sData.solutions.map((s: any, i: number) => {
-                           const legInfo = s.legs.map((l: any) => 
+                         sData.solutions.map((s: { legs: Vehicle[]; durata: string; cambi: number }, i: number) => {
+                           const legInfo = s.legs.map((l: Vehicle) => 
                              `- Treno ${l.numeroTreno} (${l.categoria}), da ${l.origine} (p. ${l.partenza}) a ${l.destinazione} (a. ${l.arrivo})`
                            ).join('\n');
                            return `Opzione ${i+1} (Durata: ${s.durata}, Cambi: ${s.cambi}):\n${legInfo}`;
@@ -102,7 +111,7 @@ export default function FrecciaLenta() {
           // Re-call sendMessage with the search results as a hidden system message
           setTimeout(() => {
              sendMessage(`SYSTEM: Search results for ${from} to ${to}:\n${resultsMsg}`, true);
-          }, 600);
+          }, BOT_DELAY);
           return; 
         } catch (sErr) {
           console.error('Search tool error:', sErr);

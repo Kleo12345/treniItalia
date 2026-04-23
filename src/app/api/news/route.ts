@@ -1,11 +1,18 @@
 import { NextResponse } from 'next/server';
 import localNews from '@/data/localNews.json';
 
+interface NewsItem {
+  id?: string | number;
+  testo?: string;
+  data?: number;
+  [key: string]: string | number | undefined; 
+}
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const lang = searchParams.get('lang') || 'it';
 
-  let remoteNews: any[] = [];
+  let remoteNews: NewsItem[] = [];
   try {
     const res = await fetch(
       `http://www.viaggiatreno.it/infomobilita/resteasy/viaggiatreno/news/0/${lang}`,

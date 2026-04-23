@@ -1,5 +1,24 @@
 import { NextResponse } from 'next/server';
 
+interface StationMatch {
+  id: string;
+  name: string;
+}
+
+interface Vehicle {
+  numeroTreno: string;
+  categoriaDescrizione: string;
+  origine: string;
+  destinazione: string;
+  orarioPartenza: string;
+  orarioArrivo: string;
+}
+
+interface Solution {
+  durata: string;
+  vehicles: Vehicle[];
+}
+
 async function getStationId(name: string): Promise<string | null> {
   try {
     const res = await fetch(`http://www.viaggiatreno.it/infomobilita/resteasy/viaggiatreno/autocompletaStazione/${encodeURIComponent(name)}`);
@@ -8,8 +27,13 @@ async function getStationId(name: string): Promise<string | null> {
     // Format: NAME|ID\nNAME|ID
     const lines = text.split('\n').filter(l => l.trim().length > 0);
     if (lines.length === 0) return null;
-    const firstMatch = lines[0].split('|');
-    return firstMatch[1] || null;
+    
+    const matches: StationMatch[] = lines.map(l => {
+      const parts = l.split('|');
+      return { name: parts[0], id: parts[1] };
+    });
+
+    return matches[0].id || null;
   } catch {
     return null;
   }
@@ -41,10 +65,10 @@ export async function GET(request: Request) {
         if (data.soluzioni && data.soluzioni.length > 0) {
           return NextResponse.json({
             from, to, type: 'solutions',
-            solutions: data.soluzioni.slice(0, 3).map((sol: any) => ({
+            solutions: data.soluzioni.slice(0, 3).map((sol: Solution) => ({
               durata: sol.durata,
               cambi: sol.vehicles.length - 1,
-              legs: sol.vehicles.map((v: any) => ({
+              legs: sol.vehicles.map((v: Vehicle) => ({
                 numeroTreno: v.numeroTreno,
                 categoria: v.categoriaDescrizione,
                 origine: v.origine,
@@ -56,7 +80,7 @@ export async function GET(request: Request) {
           });
         }
       }
-    } catch (e) {
+    } catch {
       console.log('Solutions API failed, falling back to departures...');
     }
 
@@ -68,14 +92,15 @@ export async function GET(request: Request) {
 
     const departures = await depRes.json();
     const normalizedTo = to.toLowerCase();
-    const directResults = departures.filter((d: any) => 
+    const directResults = departures.filter((d: { destinazione: string }) => 
       d.destinazione.toLowerCase().includes(normalizedTo) || normalizedTo.includes(d.destinazione.toLowerCase())
-    ).map((d: any) => ({
+    ).map((d: { numeroTreno: string; categoria: string; destinazione: string; orarioPartenza: string }) => ({
       numeroTreno: d.numeroTreno,
       categoria: d.categoria,
       destinazione: d.destinazione,
       orarioPartenza: d.orarioPartenza
     }));
+
 
     return NextResponse.json({
       from, to, type: 'direct',

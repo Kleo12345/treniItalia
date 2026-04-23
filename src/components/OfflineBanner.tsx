@@ -9,7 +9,8 @@ export default function OfflineBanner() {
     const goOffline = () => setOffline(true);
     const goOnline = () => setOffline(false);
 
-    setOffline(!navigator.onLine);
+    const isOffline = !navigator.onLine;
+    setTimeout(() => setOffline(isOffline), 0);
     window.addEventListener('offline', goOffline);
     window.addEventListener('online', goOnline);
     return () => {

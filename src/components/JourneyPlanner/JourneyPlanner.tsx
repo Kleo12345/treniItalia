@@ -174,6 +174,15 @@ export default function JourneyPlanner({ onSelectTrain }: JourneyPlannerProps) {
             {renderSuggestions(from, 'from')}
           </div>
 
+          <button 
+            type="button" 
+            className={styles.swapBtn} 
+            onClick={swapStations}
+            title={t('planner.swap', { defaultValue: 'Swap Stations' })}
+          >
+            ⇅
+          </button>
+
           <div className={`${styles.inputGroup} ${styles.suggestionsWrap}`}>
             <label className={styles.inputLabel}>{t('planner.to', { defaultValue: 'To' })}</label>
             <input

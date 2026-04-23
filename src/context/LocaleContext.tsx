@@ -46,9 +46,9 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const stored = localStorage.getItem('locale');
     if (stored && localeFiles[stored]) {
-      setLangState(stored);
+      setTimeout(() => setLangState(stored), 0);
     }
-    setMounted(true);
+    setTimeout(() => setMounted(true), 0);
   }, []);
 
   const setLang = useCallback((newLang: string) => {
