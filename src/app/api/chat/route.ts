@@ -68,7 +68,7 @@ Character Guidelines:
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'llama3.2:3b',
+        model: 'llama3.2:latest',
         messages: [
           { role: 'system', content: systemPrompt },
           ...messages
